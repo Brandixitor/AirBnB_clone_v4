@@ -3,4 +3,19 @@ header {
   height: 70px;
   width: 100%;
   border-bottom: 1px solid #cccccc;
+  display: flex;
+  align-items: center;
+}
+
+#api_status {
+    margin-left: auto;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 30px;
+    background-color: #cccccc;
+}
+
+#api_status.available {
+    background-color: #ff545f;
 }
