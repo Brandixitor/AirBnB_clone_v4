@@ -12,12 +12,8 @@ app = Flask(__name__)
 app.url_map.strict_slashes = False
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 app.register_blueprint(app_views)
-<<<<<<< HEAD
 CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
-=======
-cors = CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
 
->>>>>>> cc2915ad9bec3ef385068c59ea0b45c2299ae4ba
 
 @app.teardown_appcontext
 def close_db(error):
