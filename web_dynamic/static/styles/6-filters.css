@@ -35,6 +35,11 @@
   justify-content: center;
 }
 
+.filters .amenities input {
+    margin: 0 10px 0 0;
+    vertical-align: middle;
+}
+
 .filters .locations h3,
 .filters .amenities h3 {
   font-weight: 600;
@@ -48,6 +53,9 @@
   font-size: 14px;
   margin: 0;
   padding-left: 50px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .filters .locations {
