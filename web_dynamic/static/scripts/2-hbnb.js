@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // const host = 'localhost';
 const host = '0.0.0.0';
 
@@ -31,4 +32,29 @@ const checkApiStatus = function () {
 $(() => {
   checkAmenities();
   checkApiStatus();
+=======
+let amenitiesChecked = {};
+$(() => {
+  $('input[type=checkbox]').click(function () {
+    if (this.checked) {
+      amenitiesChecked[this.dataset.id] = this.dataset.name;
+    } else {
+      delete amenitiesChecked[this.dataset.id];
+    }
+    $('.amenities h4').text(Object.values(amenitiesChecked).join(', '));
+  });
+
+  $.ajax({
+    url: 'http://0.0.0.0:5001/api/v1/status/',
+    type: 'GET',
+    dataType: 'json'
+  })
+    .done(function (data) {
+      if (data.status === 'OK') {
+        $('#api_status').addClass('available');
+      } else {
+        $('#api_status').removeClass('available');
+      }
+    });
+>>>>>>> cc2915ad9bec3ef385068c59ea0b45c2299ae4ba
 });

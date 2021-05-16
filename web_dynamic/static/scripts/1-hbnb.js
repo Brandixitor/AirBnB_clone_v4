@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(() => {
   const checkedAmenities = {};
   let displayAmenities = [];
@@ -14,5 +15,16 @@ $(() => {
       $('.amenities h4').html("&nbsp;");
 
     // console.log(checkedAmenities);
+=======
+let amenitiesChecked = {};
+$(() => {
+  $('input[type=checkbox]').click(function () {
+    if (this.checked) {
+      amenitiesChecked[this.dataset.id] = this.dataset.name;
+    } else {
+      delete amenitiesChecked[this.dataset.id];
+    }
+    $('.amenities h4').text(Object.values(amenitiesChecked).join(', '));
+>>>>>>> cc2915ad9bec3ef385068c59ea0b45c2299ae4ba
   });
 });
